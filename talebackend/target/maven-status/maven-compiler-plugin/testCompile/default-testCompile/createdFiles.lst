@@ -1,0 +1,8 @@
+com\niit\talbackend\ProductTestCase.class
+com\niit\talbackend\BillingAddressTestCase.class
+com\niit\talbackend\OrderTestCase.class
+com\niit\talbackend\CartTestCase.class
+com\niit\talbackend\UserTestCase.class
+com\niit\talbackend\SupplierTestCase.class
+com\niit\talbackend\ShippingAddressTestCase.class
+com\niit\talbackend\CategoryTestCase.class
