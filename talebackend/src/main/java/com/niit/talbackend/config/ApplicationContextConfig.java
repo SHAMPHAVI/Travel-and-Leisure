@@ -20,7 +20,7 @@ import com.niit.talbackend.model.Category;
 import com.niit.talbackend.model.Order;
 import com.niit.talbackend.model.Paymentdetails;
 import com.niit.talbackend.model.Product;
-import com.niit.talbackend.model.ShippingAddress;
+import com.niit.talbackend.model.preference;
 import com.niit.talbackend.model.Supplier;
 import com.niit.talbackend.model.User;
 
@@ -55,7 +55,7 @@ public class ApplicationContextConfig {
 	      	sessionBuilder.addAnnotatedClass(User.class);
 	      	sessionBuilder.addAnnotatedClass(Product.class);
 	      	sessionBuilder.addAnnotatedClass(BillingAddress.class);
-	      	sessionBuilder.addAnnotatedClass(ShippingAddress.class);
+	      	sessionBuilder.addAnnotatedClass(preference.class);
 	      	sessionBuilder.addAnnotatedClass(Cart.class);
 	      	sessionBuilder.addAnnotatedClass(Order.class);
 	      	sessionBuilder.addAnnotatedClass(Paymentdetails.class);

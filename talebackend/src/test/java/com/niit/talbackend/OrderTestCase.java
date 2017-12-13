@@ -30,7 +30,7 @@ public void save(){
 	order.setId("o02");
 	order.setCart_id("c01");
 	order.setBillingaddress_id("bi02");
-	order.setShippingaddress_id("ship02");
+	order.setpreference_id("ship02");
 	order.setPayment_mode("cod");
 	String check=orderDao.save(order);
 	Assert.assertEquals("save test case","success",check);
@@ -40,7 +40,7 @@ public void update(){
 	order.setId("o01");
 	order.setCart_id("c01");
 	order.setBillingaddress_id("bi02");
-	order.setShippingaddress_id("ship02");
+	order.setpreference_id("ship02");
 	order.setPayment_mode("netbanking");
 	String check=orderDao.update(order);
 	Assert.assertEquals("save test case","success",check);

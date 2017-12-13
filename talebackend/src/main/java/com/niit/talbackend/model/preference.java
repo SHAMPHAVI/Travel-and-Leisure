@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table
 @Component
-public class ShippingAddress implements Serializable {
+public class preference implements Serializable {
 
 /**
 	 * 

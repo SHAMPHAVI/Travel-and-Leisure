@@ -43,15 +43,15 @@ public String getBillingaddress_id() {
 public void setBillingaddress_id(String billingaddress_id) {
 	this.billingaddress_id = billingaddress_id;
 }
-public String getShippingaddress_id() {
-	return shippingaddress_id;
+public String getpreference_id() {
+	return preference_id;
 }
-public void setShippingaddress_id(String shippingaddress_id) {
-	this.shippingaddress_id = shippingaddress_id;
+public void setpreference_id(String preference_id) {
+	this.preference_id = preference_id;
 }
 private String cart_id;
 private String billingaddress_id;
-private String shippingaddress_id;
+private String preference_id;
 
 	
 }

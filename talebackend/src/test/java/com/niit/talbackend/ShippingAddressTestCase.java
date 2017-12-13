@@ -6,24 +6,24 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.niit.talbackend.dao.ShippingaddressDao;
-import com.niit.talbackend.model.ShippingAddress;
+import com.niit.talbackend.dao.preferenceDao;
+import com.niit.talbackend.model.preference;
 
 public class ShippingAddressTestCase {
 
 	@Autowired
 	static AnnotationConfigApplicationContext context;
 	@Autowired
-	static ShippingAddress shipaddrs;
+	static preference shipaddrs;
 	@Autowired
-	static ShippingaddressDao shipaddrsdao;
+	static preferenceDao shipaddrsdao;
 	@BeforeClass
 	public static void initial(){
 		context=new AnnotationConfigApplicationContext();
 		context.scan("com.niit.talbackend");
 		context.refresh();
-		shipaddrs=(ShippingAddress) context.getBean("shippingAddress");
-		shipaddrsdao=(ShippingaddressDao) context.getBean("shipaddrsdao");
+		shipaddrs=(preference) context.getBean("preference");
+		shipaddrsdao=(preferenceDao) context.getBean("shipaddrsdao");
 	}
 	/*@Test
 	public void savetest(){
@@ -64,7 +64,7 @@ public class ShippingAddressTestCase {
 
 	@Test
 	public void check(){
-	String a=shipaddrsdao.getshippingaddressid();
+	String a=shipaddrsdao.getpreferenceid();
 	String[] part = a.split("(?<=\\D)(?=\\d)");
 String b=part[1];
 System.out.println(b);
