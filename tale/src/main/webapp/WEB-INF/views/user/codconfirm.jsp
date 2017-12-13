@@ -12,7 +12,7 @@
 <c:if test="${t ne 'allnew'}">
 <table class="table table-bordered" style="margin-top:50px;margin-bottom:30px;">
 <tr class="bg-info">
-<th>Product Details</th><th>Shipping Address</th><th>Price</th><th>Quantity</th><th>Total Amount</th>
+<th>Product Details</th><th>Billing Address</th><th>Price</th><th>Quantity</th><th>Total Amount</th>
 </tr>
 <tr class="info">
 <td><pre>
@@ -22,12 +22,12 @@ Product Name:${product.name}
 </td>
 <td>
 <pre>
-${shippingAddress.name},
-${shippingAddress.doorno},
-${shippingAddress.street},
-${shippingAddress.city},
-${shippingAddress.pincode},
-${shippingAddress.country}.
+${billingAddress.name},
+${billingAddress.doorno},
+${billingAddress.street},
+${billingAddress.city},
+${billingAddress.pincode},
+${billingAddress.country}.
 </pre>
 </td>
 <td>${product.price}</td>
@@ -53,12 +53,12 @@ ${shippingAddress.country}.
 </c:forEach></td>
 <td>
 <pre>
-${shippingAddress.name},
-${shippingAddress.doorno},
-${shippingAddress.street},
-${shippingAddress.city},
-${shippingAddress.pincode},
-${shippingAddress.country}.
+${billingAddress.name},
+${billingAddress.doorno},
+${billingAddress.street},
+${billingAddress.city},
+${billingAddress.pincode},
+${billingAddress.country}.
 </pre>
 </td>
 <td><c:forEach items="${listofnewcart}" var="productname">

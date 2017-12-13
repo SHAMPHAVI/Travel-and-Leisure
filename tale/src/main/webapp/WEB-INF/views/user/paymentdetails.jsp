@@ -11,7 +11,7 @@
 <h3 class= "col-xs-offset-4 text-success" style="margin-top:100px;">Choose your Payment Mode</h3>
 <form:form commandName="paymentmode" style="margin-top:100px;" >
 <input type="hidden" value="cod" path="paymentmethod" readonly="true"/>
-<input type="submit"name="_eventId_cod" value="cod" class=" col-xs-offset-5 btn btn-success">
+<input type="submit"name="_eventId_cod" value="cash" class=" col-xs-offset-5 btn btn-success">
 <input type="hidden" value="cod" path="paymentmethod" readonly="true"/>
 <input type="submit"name="_eventId_netbanking" value="netbanking" class="btn btn-success">
 </form:form>

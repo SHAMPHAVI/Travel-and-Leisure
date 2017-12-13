@@ -8,7 +8,6 @@
 <body>
 <jsp:include page="./index.jsp"></jsp:include>
 <h1 class="text-primary text-center">Thank you for your Purchase</h1>
-<h3 class="text-success text-center">Your Order Will Be Delivered Soon </h3>
-<div class="text-center"><a href="/scart/index">Home</a></div>
+<div class="text-center"><a href="/tale/index">Home</a></div>
 </body>
 </html>

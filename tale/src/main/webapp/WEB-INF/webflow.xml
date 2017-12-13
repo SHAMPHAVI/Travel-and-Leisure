@@ -3,7 +3,7 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.springframework.org/schema/webflow
                           http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
-<var name="shippingAddress" class="com.niit.talbackend.model.ShippingAddress"/>
+<var name="preference" class="com.niit.talbackend.model.preference"/>
 <var name="order" class="com.niit.talbackend.model.Order"/>
 <var name="flowlo" class="com.niit.tal.webflow.flowlogic"/>
 <var name="billingAddress" class="com.niit.talbackend.model.BillingAddress"/>
@@ -16,8 +16,8 @@
           
 <evaluate expression="flowlo.initwebflow()" result="order"></evaluate>
 </on-start>
-<view-state id="viewshipping" view="views/user/shippingAddress.jsp" model="shippingAddress">
-<transition on="submitshippingaddress" to="viewbillingjsp"></transition>
+<view-state id="viewshipping" view="views/user/preference.jsp" model="preference">
+<transition on="submitpreference" to="viewbillingjsp"></transition>
 </view-state>
 <end-state id="tohome" view="views/index.jsp"></end-state>
 <view-state id="viewbillingjsp" view="views/user/billingAddress.jsp" model="billingAddress">
@@ -55,7 +55,7 @@
 <transition on="back" to="netconfirm"></transition>
 </view-state>
 <action-state id="netsavetodb">
-<evaluate expression="flowlo.generatenet(order,shippingAddress,billingAddress,product,quantity,forsinglecartproduct)"></evaluate>
+<evaluate expression="flowlo.generatenet(order,preference,billingAddress,product,quantity,forsinglecartproduct)"></evaluate>
 <transition on="success" to="thankyou"></transition>
 </action-state>
 <view-state id="orderconfirm" view="views/user/codconfirm.jsp">
@@ -70,7 +70,7 @@
 <transition on="net banking" to="tohomee"></transition>
 </action-state>
 <action-state id="codconfirm">
-<evaluate expression="flowlo.generatecod(order,shippingAddress,billingAddress,product,quantity,forsinglecartproduct)"></evaluate>
+<evaluate expression="flowlo.generatecod(order,preference,billingAddress,product,quantity,forsinglecartproduct)"></evaluate>
 <transition on="success" to="thankyou"></transition>
 </action-state>
 <view-state id="tohomee" view="views/home.jsp">

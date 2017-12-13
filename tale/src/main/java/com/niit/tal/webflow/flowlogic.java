@@ -14,13 +14,13 @@ import com.niit.talbackend.dao.BillingAddressDao;
 import com.niit.talbackend.dao.CartDao;
 import com.niit.talbackend.dao.OrderDao;
 import com.niit.talbackend.dao.ProductDao;
-import com.niit.talbackend.dao.ShippingaddressDao;
+import com.niit.talbackend.dao.preferenceDao;
 import com.niit.talbackend.model.BillingAddress;
 import com.niit.talbackend.model.Cart;
 import com.niit.talbackend.model.Order;
 import com.niit.talbackend.model.Paymentdetails;
 import com.niit.talbackend.model.Product;
-import com.niit.talbackend.model.ShippingAddress;
+import com.niit.talbackend.model.preference;
 @Component("flowlo")
 public class flowlogic implements Serializable{
 	Principal p;
@@ -29,7 +29,7 @@ BillingAddressDao billingaddressdao;
 	@Autowired
 	Paymentdetails paymentdetails;
 	@Autowired
-	ShippingaddressDao dao;
+	preferenceDao dao;
 	@Autowired
 	CartDao cartDao;
 	@Autowired
@@ -47,12 +47,12 @@ public Order initwebflow(){
 	order=new Order();
 	return order;
 }
-public String generatecod(Order order,ShippingAddress shippingAddress,
+public String generatecod(Order order,preference preference,
 		BillingAddress billingAddress,Product obj,String quantity,String c){
 	String[] d=c.split(",");
 	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 	String currentPrincipalName = authentication.getName();
-	String id=dao.getshippingaddressid();
+	String id=dao.getpreferenceid();
 	String[] part = id.split("(?<=\\D)(?=\\d)");
 int b=Integer.parseInt(part[1])+1;
 String b1;
@@ -61,9 +61,9 @@ if(b>9){
 	}else {
 	b1="ship0"+b;
 }
-	shippingAddress.setId(b1);
+	preference.setId(b1);
 	
-	dao.saveshipaddrs(shippingAddress);
+	dao.saveshipaddrs(preference);
 	System.out.println("start");
 	String billid=billingaddressdao.getmaxbillingaddressid();
 	String split[]=billid.split("(?<=\\D)(?=\\d)");
@@ -76,7 +76,7 @@ if(b>9){
 }
 	billingAddress.setId(finalbillid);
 	billingaddressdao.savebilladdrs(billingAddress);
-	order.setShippingaddress_id(b1);
+	order.setpreference_id(b1);
 	order.setBillingaddress_id(finalbillid);
 	order.setPayment_mode("cod");
 if(quantity.equals("allnew")){
@@ -161,11 +161,11 @@ public String getquantity(String id){
 	return array[1];}
 }
 public String generatenet(Order order,
-		ShippingAddress shippingAddress,BillingAddress billingAddress,Product obj,
+		preference preference,BillingAddress billingAddress,Product obj,
 		String quantity,String ca){
 	String [] d=ca.split(",");
 	
-	String id=dao.getshippingaddressid();
+	String id=dao.getpreferenceid();
 	String[] part = id.split("(?<=\\D)(?=\\d)");
 int b=Integer.parseInt(part[1])+1;
 String b1;
@@ -174,9 +174,9 @@ if(b>9){
 	}else {
 	b1="ship0"+b;
 }
-	shippingAddress.setId(b1);
+	preference.setId(b1);
 	
-	dao.saveshipaddrs(shippingAddress);
+	dao.saveshipaddrs(preference);
 	System.out.println("start");
 	String billid=billingaddressdao.getmaxbillingaddressid();
 	String split[]=billid.split("(?<=\\D)(?=\\d)");
@@ -189,7 +189,7 @@ if(b>9){
 }
 	billingAddress.setId(finalbillid);
 	billingaddressdao.savebilladdrs(billingAddress);
-	order.setShippingaddress_id(b1);
+	order.setpreference_id(b1);
 	order.setBillingaddress_id(finalbillid);
 	order.setPayment_mode("netbanking");	
 	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
